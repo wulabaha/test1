@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="container-fluid">
+        <h2>临床试验更新</h2>
+        <p>来源于CDE临床试验默示许可，展示最近一周更新数据，其中更新时间为获取该条记录的时间</p>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">受理号</th>
+              <th scope="col">药品名称</th>
+              <th scope="col">申请人名称</th>
+              <th scope="col">适应症</th>
+              <th scope="col">药注册分类</th>
+              <th scope="col">更新时间</th>
+            </tr>
+          </thead>
+          <tbody>
+           {% for info in infos %}
+               <tr>
+                  <th scope="row">{{ info.id }}</th>
+                  <td>{{ info.Acceptno }}</td>
+                  <td>{{ info.Drugname }}</td>
+                  <td>{{ info.Corpname }}</td>
+                  <td>{{ info.Indication }}</td>
+                  <td>{{ info.Register_Type }}</td>
+                  <td>{{ info.Uptime }}</td>
+                </tr>
+
+           {% endfor %}
+          </tbody>
+        </table>
+
+
+    </div>
+    <div class="container-fluid">
+        <h2>临床试验更新</h2>
+        <p>来源于CDE临床试验默示许可，其中更新时间为获取该条记录的时间</p>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">受理号</th>
+              <th scope="col">药品名称</th>
+              <th scope="col">申请人名称</th>
+              <th scope="col">适应症</th>
+              <th scope="col">药注册分类</th>
+              <th scope="col">更新时间</th>
+            </tr>
+          </thead>
+          <tbody>
+           {% for info in infos %}
+               <tr>
+                  <th scope="row">{{ info.id }}</th>
+                  <td>{{ info.Acceptno }}</td>
+                  <td>{{ info.Drugname }}</td>
+                  <td>{{ info.Corpname }}</td>
+                  <td>{{ info.Indication }}</td>
+                  <td>{{ info.Register_Type }}</td>
+                  <td>{{ info.Uptime }}</td>
+                </tr>
+
+           {% endfor %}
+          </tbody>
+        </table>
+
+
+    </div>
+{% endblock %}
